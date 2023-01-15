@@ -1,0 +1,229 @@
+:root {
+  --PrimaryColor: #0073a8;
+  --SecondaryColor: #10b5cb;
+  --gradientColor: linear-gradient(to right, #10b5cb, #0073a8);
+  --whiteColor: #fff;
+  --blackColor: #1b2d36;
+  --textColor: #58585f;
+  --whiteColorDeam: #ededed;
+  --greyText: #bebebe;
+  --inputColor: #efefef;
+  --bodyColor: #f0f0f6;
+  --cardBG: #e1e1eb;
+}
+
+.home {
+  width: 100%;
+  top: 5.9rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+}
+
+.home .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    117deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(16, 16, 33, 0.6446953781512605) 56%,
+    rgba(175, 188, 191, 0) 60%
+  );
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  mix-blend-mode: hard-light;
+}
+
+.home img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.home .homeContent {
+  width: 100%;
+  height: max-content;
+  padding: 3.8rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: auto;
+  color: var(--whiteColor);
+  z-index: 100;
+}
+
+.home .homeContent .textDiv {
+  padding: 6rem 0;
+}
+
+.home .homeContent .cardDiv {
+  position: relative;
+  padding: 2rem 1rem;
+  background-color: var(--whiteColor);
+  border-radius: 50px;
+  gap: 1rem;
+}
+
+.home .homeContent .cardDiv label {
+  display: block;
+  color: var(--textColor);
+  padding-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.home .homeContent .cardDiv .label_total {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .homeContent .cardDiv .label_total .total {
+  color: var(--textColor);
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.home .homeContent .cardDiv .input {
+  height: 40px;
+  padding: 0 1rem;
+  background-color: var(--inputColor);
+  border-radius: 3rem;
+}
+
+input::placeholder {
+  font-size: 13px;
+}
+
+.locationIcon {
+  font-size: 10px;
+  margin-left: 10px;
+  color: var(--blackColor);
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blackColor);
+}
+
+.home .homeContent .textDiv .smallText {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.home .homeContent .textDiv .homeTitle {
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.home .homeContent .searchOptions {
+  position: absolute;
+  background: var(--gradientColor);
+  width: max-content;
+  bottom: -0.7rem;
+  column-gap: 0.8rem;
+  padding: 5px 1rem;
+  border-radius: 3rem;
+  left: 50%;
+  transform: translate(-50%);
+  justify-content: center;
+  cursor: pointer;
+}
+
+.home .homeContent .searchOptions:hover {
+  background-color: var(--PrimaryColor);
+}
+
+.home .homeContent .searchOptions .filterIcon {
+  font-size: 18px;
+}
+
+.home .homeContent .searchOptions span {
+  font-size: 13px;
+}
+
+.home .homeContent .homeFooterIcons {
+  padding-top: 2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.home .homeContent .homeFooterIcons .icon {
+  font-size: 20px;
+  margin: 0 5px;
+  color: var(--whiteColor);
+  font-weight: 600;
+}
+
+.home .homeContent .homeFooterIcons .icon:hover {
+  color: var(--PrimaryColor);
+}
+
+@media screen and (min-width: 500px) {
+  .home .homeContent .textDiv .smallText {
+    font-size: 16px;
+  }
+  .home .homeContent .textDiv .homeTitle {
+    position: absolute;
+    font-size: 2.3rem;
+    width: max-content;
+  }
+  .home .homeContent .textDiv .homeTitle::after {
+    position: absolute;
+    content: "";
+    background: var(--SecondaryColor);
+    height: 5px;
+    width: 145px;
+    right: 0px;
+    bottom: 5px;
+    z-index: -1;
+  }
+  .home .homeContent .cardDiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 660px) {
+  .home .homeContent .cardDiv {
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 940px) {
+  .home {
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .home {
+    height: 70vh;
+  }
+  .home .homeContent {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .home .homeContent .cardDiv {
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(3m 1fr);
+  }
+  .home .homeContent .cardDiv .input {
+    margin-bottom: 1rem;
+  }
+  .home .homeContent .cardDiv .searchOptions {
+    bottom: -1rem;
+    padding: 8px 1rem;
+  }
+}
